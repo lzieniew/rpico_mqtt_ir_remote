@@ -1,4 +1,4 @@
-# rpico_mqtt_ir_remote
+# Raspberry pi pico W MQTT IR remote
 Script for raspberry pi pico to send IR signals in reaction to MQTT messages
 
 You will need to put umqtt library on rpi pico. You can do it by cloning https://github.com/micropython/micropython-lib and putting file micropython/umqtt.simple/umqtt/simple.py on the pico. It can be done with command
