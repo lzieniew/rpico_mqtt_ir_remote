@@ -4,8 +4,8 @@ import network
 from umqtt.simple import MQTTClient
 
 # WiFi details
-ssid = "your_ssid"
-password = "your_password"
+ssid = "doskozza"
+password = "osiemznakow"
 
 # MQTT details
 mqtt_server = "ejaj.local"
@@ -29,11 +29,12 @@ def connect_to_wifi():
 # Callback function to handle received messages
 def on_message(topic, msg):
     print("Received message:", topic, msg)
-    pin_15.toggle()
+    if msg == b"Power Stereo":
+        pin_15.toggle()
 
 
 # Set up pin 15 for MQTT message toggle
-pin_15 = machine.Pin(15, machine.Pin.OUT)
+pin_15 = machine.Pin("LED", machine.Pin.OUT)
 
 # Connect to WiFi
 connect_to_wifi()
